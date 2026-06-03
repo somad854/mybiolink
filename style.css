@@ -1,0 +1,152 @@
+/* ==================== 1. RESET & DASAR ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    /* Menggunakan kombinasi warna ungu cerah (lavender, lilac, dan pastel purple) */
+    background-color: #a29bfe; /* Warna dasar ungu cerah yang soft */
+    background-image: 
+        radial-gradient(at 0% 0%, rgba(224, 195, 252, 0.8) 0px, transparent 50%),  /* Lilac pastel cerah di kiri atas */
+        radial-gradient(at 100% 0%, rgba(181, 166, 230, 0.8) 0px, transparent 50%),  /* Lavender terang di kanan atas */
+        radial-gradient(at 100% 100%, rgba(243, 198, 222, 0.7) 0px, transparent 50%),/* Sentuhan pink senja cerah di kanan bawah */
+        radial-gradient(at 0% 100%, rgba(160, 142, 214, 0.8) 0px, transparent 50%),  /* Ungu medium di kiri bawah */
+        radial-gradient(at 50% 50%, rgba(255, 255, 255, 0.4) 0px, transparent 60%);  /* Efek kilau putih transparan di tengah */
+    
+    background-size: 200% 200%;
+    animation: gradientMove 15s ease infinite;
+    background-attachment: fixed;
+    
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* Animasi pergeseran posisi lingkaran warna agar gerakannya tetap halus dan acak */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+/* ==================== 2. TATA LETAK UTAMA ==================== */
+.main-wrapper {
+    width: 100%;
+    max-width: 430px; /* Standar ukuran layar HP agar pas di tengah */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Foto Profil Bulat Berbayangan */
+.profile-pic {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Teks Nama */
+h1 {
+    font-size: 22px;
+    color: #2d2554; /* Diubah jadi ungu gelap pekat agar kontras dengan background terang */
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+/* Teks Bio */
+.bio {
+    color: #4a3f78; /* Diubah jadi ungu medium pekat */
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+/* Wadah Pembungkus Tombol-Tombol */
+.links-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* ==================== 3. DESAIN TOMBOL LIST ==================== */
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Panah otomatis bergeser ke kanan ujung */
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.65); /* Putih semi-transparan */
+    backdrop-filter: blur(5px); /* Efek blur kaca di belakang tombol */
+    -webkit-backdrop-filter: blur(5px);
+    color: #111111;
+    text-decoration: none;
+    padding: 12px 16px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.2s ease;
+}
+
+/* Bungkus Ikon + Teks di Sisi Kiri */
+.btn-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Kotak Wadah Ikon */
+.icon-box {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+/* Warna Kotak Identitas Sosmed Terkait */
+.fb-box { background-color: #1877f2; }
+.ig-box { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+.tiktok-box { background-color: #000000; }
+
+/* Teks Judul Tombol */
+.btn-text {
+    font-size: 16px;
+    color: #111111;
+}
+
+/* Ikon Panah Eksternal Kanan */
+.arrow-icon {
+    color: #555555;
+    font-size: 13px;
+    opacity: 0.7;
+    transition: transform 0.2s ease;
+}
+
+/* ==================== 4. EFEK INTERAKTIF (HOVER) ==================== */
+.link-btn:hover {
+    background-color: rgba(255, 255, 255, 0.85); /* Tombol jadi lebih solid putih */
+    transform: translateY(-2px); /* Naik sedikit */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.link-btn:hover .arrow-icon {
+    transform: translate(2px, -2px); /* Panah bergerak diagonal ke kanan atas */
+    color: #000000;
+    opacity: 1;
+}
